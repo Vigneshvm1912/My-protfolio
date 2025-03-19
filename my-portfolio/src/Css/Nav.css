@@ -1,0 +1,48 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* The navbar container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    border: none; /* Remove border */
+    box-shadow: none; /* Remove box shadow */
+    align-items: center;
+    background-color: #000000; /* Light orange background color for navbar */
+    max-height: 3rem;
+}
+
+/* Style for logo */
+nav .logo img {
+    height: 80px; /* Adjust logo size */
+    width: auto;
+}
+
+/* Style for the navigation links */
+nav ul {
+    list-style-type: none;
+    padding: 2rem;
+    display: flex;
+    margin: 0 8rem; /* Remove margin */
+}
+
+nav ul li {
+    margin: 0 2rem; /* Add space between links */
+}
+
+nav ul li a {
+    color: #ebbc94;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800; /* Highlight links on hover */
+}
