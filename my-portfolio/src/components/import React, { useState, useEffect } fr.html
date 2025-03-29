@@ -1,0 +1,308 @@
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../Css/Header.css"; // Import CSS for styling
+import logo from "../Assets/image.png";
+import github from "../Assets/Git.png";
+import whatsapp from "../Assets/Whatsapp.png";
+import linkedin from "../Assets/Linkedin.png";
+import sql from "../Assets/Sql.png";
+import me from "../Assets/me.png";
+import python from "../Assets/Python.png";
+import sign from "../Assets/Sign-language.png";
+import EDA from "../Assets/EDA.png";
+import RRSVP from "../Assets/RSVP.png";
+import ML from "../Assets/ML.png";
+import MLicon from "../Assets/ML-icon.png";
+import dataa from "../Assets/Data-analysis.png";
+import Excel from "../Assets/Excel.png"
+import Frontend from "../Assets/Front-end.png"
+import vscode from "../Assets/Vscode.png"
+import powerbi from "../Assets/Powerbi.png"
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showLogo, setShowLogo] = useState(true);
+  const [hideMouse, setHideMouse] = useState(false);
+  const [activeTab, setActiveTab] = useState("skills"); // Default to "skills"
+   // 🔥 New state for skills toggle
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+        setShowLogo(false);
+        setHideMouse(true);
+      } else {
+        setIsScrolled(false);
+        setShowLogo(true);
+        setHideMouse(false);
+      }
+    };
+   
+  
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // 🔥 Toggle function for the skills box
+ 
+  return (
+    <div className="body">
+      {/* Header Section */}
+      <header className={isScrolled ? "scrolled" : ""}>
+        {showLogo ? (
+          <div className="logo">
+            <img src={logo} alt="Logo" />
+          </div>
+        ) : (
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        )}
+      </header>
+
+      {/* Home Section */}
+      <div id="home" className="Home">
+        <div className="Head-text-home">
+        <div className="graph-lines">
+  <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,300 L150,100 L300,400 L450,200 L600,350 L750,150 L900,300 L1050,200 L1200,250" 
+          stroke="yellow" stroke-width="2" fill="none"/>
+  </svg>
+</div>
+
+          <h2>I AM</h2>
+          <h1>VIGNESH</h1>
+          <p>
+            A Data Science student and Data Analyst skilled in data analysis, <br></br>
+            machine learning, and visualization to drive actionable insights 
+            and strategic decisions.
+          </p>
+          <div className="graph-lines">
+  <svg viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,300 L150,100 L300,400 L450,200 L600,350 L750,150 L900,300 L1050,200 L1200,250" 
+          stroke="yellow" stroke-width="2" fill="none"/>
+  </svg>
+</div>
+    
+    
+
+        {/* Social Media Icons */}
+        <div className="social-buttons">
+          <a href="https://github.com/your-github" target="_blank" rel="noopener noreferrer" className="circle-btn-github">
+            <img src={github} alt="GitHub" />
+          </a>
+          <a href="https://wa.me/your-whatsapp" target="_blank" rel="noopener noreferrer" className="circle-btn whatsapp">
+            <img src={whatsapp} alt="WhatsApp" />
+          </a>
+          <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" className="circle-btn linkedin">
+            <img src={linkedin} alt="LinkedIn" />
+          </a>
+        </div>
+        <div className="Resume-button">
+          <button>RESUME</button>
+        </div>
+        <div className={`mouse ${hideMouse ? "hidden" : ""}`}></div>
+      </div>
+      </div>
+
+      {/* About Section */}
+      <div id="about" className="About">
+        <div className="about-container">
+          {/* Left Side - Profile Image */}
+          <div className="about-left">
+            <img src={me} alt="About Me" />
+          </div>
+
+          {/* Right Side - Skills & Animation */}
+          <div className="about-right">
+          <div className="about-text">
+              <p>
+                I specialize in Data Science, Machine Learning, and Database 
+                Management, with expertise in Python, MySQL, Power BI, and 
+                Looker Studio for data analysis, visualization, and automation. 
+                Hands-on experience in Scikit-learn, TensorFlow, and API 
+                integration allows me to build predictive models and interactive 
+                dashboards for data-driven decisions.
+              </p>
+            </div>
+
+            <div className="toggle-switch">
+            <div className={`toggle-btn ${activeTab === "skills" ? "active" : ""}`}
+              onClick={() => setActiveTab("skills")}
+            >
+              Skills
+            </div>
+            <div className={`toggle-btn ${activeTab === "tools" ? "active" : ""}`}
+              onClick={() => setActiveTab("tools")}
+            >
+              Tools
+            </div>
+          </div>
+
+          {/* 🔥 Content Display Based on Active Tab */}
+          <div className="skills-box">
+  {activeTab === "skills" && (
+    <div>
+      <h3>Skills</h3>
+      <div className="skills-grid">
+        <div className="skill">
+          <img src={python} alt="Python" />
+          <span>Python</span>
+        </div>
+        <div className="skill">
+          <img src={sql} alt="SQL" />
+          <span>SQL</span>
+        </div>
+        <div className="skill">
+          <img src={MLicon} alt="Machine Learning" />
+          <span>Machine Learning</span>
+        </div>
+        <div className="skill">
+          <img src={dataa} alt="Data Analysis" />
+          <span>Data Analysis</span>
+        </div>
+        <div className="skill">
+          <img src={Excel} alt="Data Analysis" />
+          <span>Excel</span>
+        </div>
+        <div className="skill">
+          <img src={Frontend} alt="Data Analysis" />
+          <span>Frontend</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  {activeTab === "tools" && (
+    <div>
+      <h3>Tools</h3>
+      <div className="skills-grid">
+        <div className="skill">
+          <img src={powerbi} alt="Power BI" />
+          <span>Power BI</span>
+        </div>
+        <div className="skill">
+          <img src="looker.png" alt="Looker Studio" />
+          <span>Looker Studio</span>
+        </div>
+        <div className="skill">
+          <img src="tableau.png" alt="Tableau" />
+          <span>Tableau</span>
+        </div>
+        <div className="skill">
+          <img src="jupyter.png" alt="Jupyter Notebook" />
+          <span>Jupyter Notebook</span>
+        </div>
+        <div className="skill">
+          <img src={vscode} alt="Jupyter Notebook" />
+          <span>Vscode</span>
+        </div>
+        <div className="skill">
+          <img src={vscode} alt="Jupyter Notebook" />
+          <span>Vscode</span>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+
+            
+
+
+            {/* More Button */}
+            <div className="about-button">
+              <button onClick={() => navigate("/about")}>MORE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Projects Section */}
+      <div id="projects" className="section">
+        <h2 className="projects-heading">My Projects</h2>
+        <ul id="cards">
+          <li className="card" id="card_1">
+            <div className="card__content">
+              <div>
+                <h3>Sign Language Detector</h3>
+                <p>Recognizes hand gestures and converts them into text or speech.</p>
+              </div>
+              <figure>
+                <img src={sign} alt="Sign Language Detector" />
+              </figure>
+            </div>
+          </li>
+
+          <li className="card" id="card_2">
+            <div className="card__content">
+              <div>
+                <h3>Credit EDA Analysis</h3>
+                <p>Performed Exploratory Data Analysis on credit data.</p>
+              </div>
+              <figure>
+                <img src={EDA} alt="Credit EDA" />
+              </figure>
+            </div>
+          </li>
+
+          <li className="card" id="card_3">
+            <div className="card__content">
+              <div>
+                <h3>RSVP Movie Analysis</h3>
+                <p>SQL-based analysis of movie trends and audience preferences.</p>
+              </div>
+              <figure>
+                <img src={RRSVP} alt="RSVP Movie Case Study" />
+              </figure>
+            </div>
+          </li>
+
+          <li className="card" id="card_3">
+            <div className="card__content">
+              <div>
+                <h3>RSVP Movie Analysis</h3>
+                <p>SQL-based analysis of movie trends and audience preferences.</p>
+              </div>
+              <figure>
+                <img src={ML} alt="RSVP Movie Case Study" />
+              </figure>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact Section */}
+      <div id="contact" className="section">
+        <div className="contact-container">
+          <div className="contact-left">
+            <h1>just <br /> send it.</h1>
+            <p>You don’t like forms?</p>
+            <p>Looking to do great work?</p>
+            <div className="contact-buttons">
+              <a href="mailto:Vignesh.vm1912@gmail.com" className="contact-btn">✉️ Email Me</a>
+              <a href="https://www.linkedin.com/in/your-linkedin" className="contact-btn">🚀 LinkedIn</a>
+            </div>
+          </div>
+
+          <div className="contact-right">
+            <form>
+              <input type="text" placeholder="Full Name" required />
+              <input type="email" placeholder="Email Address" required />
+              <textarea placeholder="Your message" rows="4" required></textarea>
+              <button type="submit" className="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;

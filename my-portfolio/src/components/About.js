@@ -1,13 +1,93 @@
-// src/components/About.js
-import React from 'react';
-
-const About = () => {
+import React from "react";
+import '../Css/About.css';
+const AboutPage = () => {
   return (
-    <div>
-      <h1>About Me</h1>
-      <p>Hi! I'm a React Developer with a passion for building dynamic and responsive web applications.</p>
+    <div className="section">
+      <div className="video-visual">
+        <video
+          className="video"
+          autoPlay
+          loop
+          muted
+          aria-label="background gradient animation"
+        >
+          <source
+            src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/bg-gradient-animation.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div className="section-wrapper">
+        <div className="content-wrapper">
+          {/* Content Blocks */}
+          {[
+            {
+              imgSrc:
+                "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/img-1.avif",
+              title: "Unleash Your",
+              highlight: "Inner Warrior",
+              desc: "Join the battle and conquer the arena with unmatched skill and strategy.",
+            },
+            {
+              imgSrc:
+                "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/img-2.avif",
+              title: "Embark on Your",
+              highlight: "Legendary Journey",
+              desc: "Immerse Yourself in a World Where Legends Clash and Heroes Rise to Glory.",
+            },
+            {
+              imgSrc:
+                "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/img-3.avif",
+              title: "Master the",
+              highlight: "Art of Magic",
+              desc: "Harness powerful spells and enchantments to dominate your foes and change the course of battle.",
+            },
+            {
+              imgSrc:
+                "https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/img-4.avif",
+              title: "Rise as the",
+              highlight: "Champion",
+              desc: "Lead your team to victory with unparalleled strength and unwavering determination.",
+            },
+          ].map((item, index) => (
+            <div className={`content content-${index + 1}`} key={index}>
+              <div className="mobile-visual">
+                <img className="card-img" src={item.imgSrc} alt={item.title} />
+              </div>
+              <div className="meta">
+                <h2 className="headline">
+                  {item.title}
+                  <span className="text-highlight"> {item.highlight}</span>
+                </h2>
+                <p className="desc">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Right-Side Image Cards */}
+        <div className="visual">
+          <div className="card-wrapper">
+            {[
+              "img-1.avif",
+              "img-2.avif",
+              "img-3.avif",
+              "img-4.avif",
+            ].map((img, index) => (
+              <div className={`card card-${index + 1}`} key={index}>
+                <img
+                  className="card-img"
+                  src={`https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/dynamic-content-lockups-v2/assets/${img}`}
+                  alt={`Character ${index + 1}`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default About;
+export default AboutPage;
