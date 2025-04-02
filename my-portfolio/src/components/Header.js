@@ -1,7 +1,7 @@
+/* eslint-disable react/style-prop-object */
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import "../Css/Header.css"; // Import CSS for styling
-import logo from "../Assets/image.png";
 import github from "../Assets/Git.png";
 import whatsapp from "../Assets/Whatsapp.png";
 import linkedin from "../Assets/Linkedin.png";
@@ -20,13 +20,10 @@ import vscode from "../Assets/Vscode.png"
 import powerbi from "../Assets/Powerbi.png"
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showLogo, setShowLogo] = useState(true);
-  const [hideMouse, setHideMouse] = useState(false);
   const [aboutTab, setAboutTab] = useState("skills");
   const [projectTab, setProjectTab] = useState("Python");
  // Default to "skills"
    // 🔥 New state for skills toggle
-  const navigate = useNavigate();
 
   const Python = [
     {
@@ -55,8 +52,6 @@ const Header = () => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setIsScrolled(isScrolled);
-      setShowLogo(!isScrolled);
-      setHideMouse(isScrolled);
     };
 
    
@@ -70,7 +65,6 @@ const Header = () => {
     <div className="body">
       {/* Header Section */}
       <header className={isScrolled ? "scrolled" : ""}>
-         : (
           <nav>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -79,7 +73,6 @@ const Header = () => {
               <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
-        )
       </header>
       <div id="home" className="hero-background">
         <div id="Header">
@@ -236,7 +229,9 @@ const Header = () => {
   
         </div >
         <div className="hello-wrapper">
+        <Link to="/about">
   <button className="hello-btn">Click Here <span className="arrow">→</span></button>
+  </Link>
   <div>
   <h3>TO KNOWN MORE</h3>
   </div>
@@ -302,7 +297,7 @@ const Header = () => {
             <form>
               <input type="text" placeholder="Full Name" required />
               <input type="email" placeholder="Email Address" required />
-              <textarea placeholder="Your message" rows="4" required></textarea>
+              <textarea placeholder="Your message" rows={4} required style={{ resize: 'none', width: '720px', height: '100px' }}></textarea>
               <button type="submit" className="submit-btn">Send Message</button>
             </form>
           </div>
