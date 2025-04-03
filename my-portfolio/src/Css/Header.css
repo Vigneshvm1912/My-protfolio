@@ -22,6 +22,18 @@ body {
   scroll-behavior: smooth;
   background-color: #000000;
 }
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 header{
   background-color: #19191926;
@@ -64,7 +76,10 @@ nav ul li a:hover {
 
 
 #home {
-  background-color: #0a0a1f;
+  width: 100%;
+  background: linear-gradient(-40deg, #0a0a1f00, #171927, #38275950, #0a0a1f00);
+  background-size: 400% 100%;
+  animation: gradientShift 5s ease infinite;
   min-height: 100vh; /* Takes full viewport height */
   width: 100%;
   display: flex;
@@ -89,7 +104,7 @@ nav ul li a:hover {
   font-size: 10rem;
   letter-spacing: 17px;
   text-align: center;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.169), transparent 150rem);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.183), transparent 150rem);
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px #8447ff67;
   color: transparent;
@@ -383,7 +398,7 @@ color: #8447ff;
   align-items: center; /* vertically center content */
   justify-content: center;
   justify-items: center;
-  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.048) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.137) 1px, transparent 1px);
 background-size: 20px 20px;
 }
 .About { /* cleaner, more readable */
@@ -610,8 +625,8 @@ background-size: 20px 20px;
   align-items: center; /* vertically center content */
   justify-content: center;
   justify-items: center;
-  background-image: repeating-linear-gradient(45deg, rgba(33, 31, 31, 0.04) 0, rgba(77, 76, 76, 0.04) 1px, transparent 2px),
-                  repeating-linear-gradient(-45deg, rgba(255,255,255,0.04) 0, rgba(55, 53, 53, 0.04) 1px, transparent 2px);
+  background-image: repeating-linear-gradient(45deg, rgba(33, 31, 31, 0.04) 0, rgba(77, 76, 76, 0) 1px, transparent 2px),
+                  repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.183) 0, rgba(55, 53, 53, 0.04) 1px, transparent 2px);
 background-size: 40px 40px;
 }
 .Projects h1 {
@@ -620,7 +635,7 @@ background-size: 40px 40px;
   font-size: 4rem;
   letter-spacing: 17px;
   text-align: left;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.296), transparent 150rem);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.186), transparent 150rem);
   -webkit-background-clip: text;
   color: transparent;
 }

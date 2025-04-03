@@ -159,7 +159,6 @@ const Header = () => {
              <div className="skills-box">
   {aboutTab === "skills" && (
     <div>
-      <h3>Skills</h3>
       <div className="skills-grid">
         <div className="skill">
           <img src={python} alt="Python" />
@@ -191,7 +190,6 @@ const Header = () => {
 
   {aboutTab === "tools" && (
     <div>
-      <h3>Tools</h3>
       <div className="skills-grid">
         <div className="skill">
           <img src={powerbi} alt="Power BI" />
@@ -303,7 +301,6 @@ const Header = () => {
           </div>
         </div>
         </div>
-
   </div>
 
  

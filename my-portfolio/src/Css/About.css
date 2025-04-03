@@ -34,7 +34,7 @@ body {
   font-size: 6rem;
   -webkit-text-stroke: 1px #8447ff;
   color: transparent;
-  background: radial-gradient(circle, #8447ff88, transparent);
+  background: radial-gradient(circle, #dedce1fa, transparent 150rem);
   -webkit-background-clip: text;
 }
 
